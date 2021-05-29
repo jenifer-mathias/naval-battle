@@ -1,7 +1,7 @@
 import random
 
-from main.Players import Players
-from main.Utils import Utils
+import Players
+import Utils
 
 
 class NavalBattle:

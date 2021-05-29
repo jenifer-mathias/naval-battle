@@ -1,12 +1,12 @@
-from main.NavalBattle import NavalBattle
-from main.Ocean import Ocean
-from main.Vessel import Vessel
+import NavalBattle
+import Ocean
+import Vessel
 
 
 class Main:
     strikeGroup = [Vessel.portaAvioes, Vessel.cruzadores, Vessel.destroyers, Vessel.submarinos]
 
-    def main(self):
+    def start(self):
         # --------------------- Create and position my vessels -----------------------
 
         ownOcean = Ocean.makeOcean(self)
@@ -27,4 +27,4 @@ class Main:
         print()
 
     def __init__(self):
-        self.main()
+        self.start()

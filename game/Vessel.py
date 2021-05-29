@@ -1,6 +1,6 @@
 import random
-from main.NavalBattle import NavalBattle
-from main.Ocean import Ocean
+import NavalBattle
+import Ocean
 
 
 class Vessel:
@@ -42,21 +42,21 @@ class Vessel:
             direction = 'horizontal'
         else:
             direction = 'vertical'
-            while not OK:
-                sortedLine, sortedColumn = NavalBattle.generatesRandomPosition(
-                    (len(ocean) - 1) - sizeVessel, direction, ocean)
-                if direction == 'horizontal':
-                    for column in range(sortedColumn, sortedColumn + sizeVessel, 1):
-                        if ocean[sortedLine][column] == Ocean.OCEAN_VALUE:
-                            OK = True
-                        else:
-                            OK = False
-                        break
-                else:
-                    for line in range(sortedLine, sortedLine + self, 1):
-                        if ocean[line][sortedColumn] == Ocean.OCEAN_VALUE:
-                            OK = True
-                        else:
-                            OK = False
-                        break
-            return sortedLine, sortedColumn, direction
+        while not OK:
+            sortedLine, sortedColumn = NavalBattle.generatesRandomPosition(
+                (len(ocean) - 1) - sizeVessel, direction, ocean)
+            if direction == 'horizontal':
+                for column in range(sortedColumn, sortedColumn + sizeVessel, 1):
+                    if ocean[sortedLine][column] == Ocean.OCEAN_VALUE:
+                        OK = True
+                    else:
+                        OK = False
+                    break
+            else:
+                for line in range(sortedLine, sortedLine + sizeVessel, 1):
+                    if ocean[line][sortedColumn] == Ocean.OCEAN_VALUE:
+                        OK = True
+                    else:
+                        OK = False
+                    break
+        return sortedLine, sortedColumn, direction
