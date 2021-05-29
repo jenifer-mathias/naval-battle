@@ -1,6 +1,6 @@
-import NavalBattle
-import Ocean
-import Vessel
+from game.NavalBattle import NavalBattle
+from game.Ocean import Ocean
+from game.Vessel import Vessel
 
 
 class Main:

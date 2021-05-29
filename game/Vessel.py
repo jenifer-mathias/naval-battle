@@ -1,6 +1,6 @@
 import random
-import NavalBattle
-import Ocean
+from game.NavalBattle import NavalBattle
+from game.Ocean import Ocean
 
 
 class Vessel:

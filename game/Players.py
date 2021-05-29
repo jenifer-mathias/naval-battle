@@ -1,6 +1,5 @@
 import random
 import time
-import Main
 
 
 class Players:
@@ -16,7 +15,7 @@ class Players:
 
     def attacksUser(self, line, column, user):
         listOfPossibilities = []
-        for vessel in Main().strikeGroup:
+        for vessel in Main.strikeGroup:
             listOfPossibilities.append(vessel.get('sigla'))
         if self[line][column] in listOfPossibilities:
             self[line][column] = 'x'
@@ -30,9 +29,9 @@ class Players:
         iAmAlive = False
         machineIsAlive = False
         listOfPossibilities = []
-        for vessel in Main().strikeGroup:
+        for vessel in Main.strikeGroup:
             listOfPossibilities.append(vessel.get('sigla'))
-            for line in Main().strikeGroup:
+            for line in Main.strikeGroup:
                 for value in line:
                     if value in listOfPossibilities:
                         iAmAlive = True
